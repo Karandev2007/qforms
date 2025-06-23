@@ -1,2 +1,2 @@
 # QForms
-Custom Form system for qeintech
+Custom Form system for QeinTech
