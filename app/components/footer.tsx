@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export function Footer() {
   return (
     <footer className="border-t border-border/40">
@@ -6,18 +8,18 @@ export function Footer() {
           © {new Date().getFullYear()} QeinTech. All rights reserved.
         </p>
         <div className="flex items-center space-x-6">
-          <a
-            href="#"
+          <Link
+            href="/privacy"
             className="text-sm text-muted-foreground hover:text-foreground transition-colors"
           >
             Privacy Policy
-          </a>
-          <a
-            href="#"
+          </Link>
+          <Link
+            href="/terms"
             className="text-sm text-muted-foreground hover:text-foreground transition-colors"
           >
             Terms of Service
-          </a>
+          </Link>
         </div>
       </div>
     </footer>

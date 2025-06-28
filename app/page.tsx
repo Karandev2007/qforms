@@ -1,52 +1,37 @@
 import { Header } from "./components/header";
 import { Footer } from "./components/footer";
-import { Button } from "../components/ui/button";
-import { Input } from "../components/ui/input";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../components/ui/card";
-
-{/* main login form area  */}
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export default function Home() {
   return (
     <div className="flex min-h-screen flex-col">
       <Header />
+      
+      {/* main hero section */}
       <main className="flex-1 flex items-center justify-center">
-        <div className="w-full max-w-md px-4">
-          <Card>
-            <CardHeader className="space-y-1">
-              <CardTitle className="text-2xl font-bold">Welcome back</CardTitle>
-              <CardDescription>
-                Enter your email and password to login to your account
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <form className="space-y-4">
-                <div className="space-y-2">
-                  <Input
-                    id="email"
-                    placeholder="name@example.com"
-                    type="email"
-                    autoCapitalize="none"
-                    autoComplete="email"
-                    autoCorrect="off"
-                  />
-                </div>
-                <div className="space-y-2">
-                  <Input
-                    id="password"
-                    placeholder="Enter your password"
-                    type="password"
-                    autoComplete="current-password"
-                  />
-                </div>
-                <Button className="w-full">
-                  Sign In
-                </Button>
-              </form>
-            </CardContent>
-          </Card>
+        <div className="container px-4 py-16 text-center">
+          <h1 className="text-4xl font-bold tracking-tight sm:text-6xl">
+            QForms
+          </h1>
+          <p className="mt-6 text-lg leading-8 text-muted-foreground max-w-2xl mx-auto">
+            Powerful Custom Form System Build For QeinTech.
+          </p>
+          <div className="mt-10 flex items-center justify-center gap-6">
+            <Link href="/admin">
+              <Button size="lg">
+                Get Started
+              </Button>
+            </Link>
+            <Link href="/admin/forms">
+              <Button variant="outline" size="lg">
+                View Forms
+              </Button>
+            </Link>
+          </div>
         </div>
       </main>
+
       <Footer />
     </div>
   );
