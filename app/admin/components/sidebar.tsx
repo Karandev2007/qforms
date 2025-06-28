@@ -1,9 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { cn } from "@/lib/utils";
-import { FileText, LayoutDashboard, MessageSquare } from "lucide-react";
+import { FileText, LayoutDashboard, LogOut, MessageSquare } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 {/* sidebar options */}
 
@@ -27,6 +28,24 @@ const sidebarItems = [
 
 export function Sidebar() {
   const pathname = usePathname();
+  const router = useRouter();
+
+  const handleLogout = async () => {
+    try {
+      const response = await fetch('/api/auth/logout', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+
+      if (response.ok) {
+        router.push('/');
+      }
+    } catch (error) {
+      console.error('Logout failed:', error);
+    }
+  };
 
   return (
     <div className="w-64 border-r bg-muted/10">
@@ -57,6 +76,16 @@ export function Sidebar() {
               );
             })}
           </nav>
+        </div>
+        <div className="border-t p-4">
+          <Button 
+            variant="ghost" 
+            className="w-full justify-start text-muted-foreground hover:text-foreground"
+            onClick={handleLogout}
+          >
+            <LogOut className="mr-3 h-5 w-5" />
+            Logout
+          </Button>
         </div>
       </div>
     </div>

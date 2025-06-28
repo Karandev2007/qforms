@@ -17,15 +17,10 @@ export default function Home() {
           <p className="mt-6 text-lg leading-8 text-muted-foreground max-w-2xl mx-auto">
             Powerful Custom Form System Build For QeinTech.
           </p>
-          <div className="mt-10 flex items-center justify-center gap-6">
+          <div className="mt-10 flex items-center justify-center">
             <Link href="/admin">
               <Button size="lg">
                 Get Started
-              </Button>
-            </Link>
-            <Link href="/admin/forms">
-              <Button variant="outline" size="lg">
-                View Forms
               </Button>
             </Link>
           </div>
